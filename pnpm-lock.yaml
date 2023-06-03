@@ -28,6 +28,9 @@ devDependencies:
   '@vitejs/plugin-react-swc':
     specifier: ^3.0.0
     version: 3.3.1(vite@4.3.9)
+  '@webgpu/types':
+    specifier: ^0.1.32
+    version: 0.1.32
   eslint:
     specifier: ^8.38.0
     version: 8.42.0
@@ -603,6 +606,10 @@ packages:
       vite: 4.3.9
     transitivePeerDependencies:
       - '@swc/helpers'
+    dev: true
+
+  /@webgpu/types@0.1.32:
+    resolution: {integrity: sha512-H6JRAvRonWxqREjxXMZgQmdgIFPe6mykLgdrHY7EQE7YihMKd/SjtSGilUmMKECVdUMg2IQB9vzaXDiTj1AxZg==}
     dev: true
 
   /acorn-jsx@5.3.2(acorn@8.8.2):
