@@ -21,13 +21,15 @@ function App() {
       code: shaderCode
     });
 
+    const tw = Math.cos(Math.PI / 6);
+
     const vertices = new Float32Array([
-      0,     0.6, 0, 1, // position  [x, y, z, w]
-      1,       0, 0, 1, // color     [r, g, b, a]
-      -0.5, -0.6, 0, 1, // position  [x, y, z, w]
-      0,       1, 0, 1, // color     [r, g, b, a]
-      0.5,  -0.6, 0, 1, // position  [x, y, z, w]
-      0,       0, 1, 1  // color     [r, g, b, a]
+      0,      1, 0, 1, // position  [x, y, z, w]
+      1,      0, 0, 1, // color     [r, g, b, a]
+      -tw, -0.5, 0, 1, // position  [x, y, z, w]
+      0,      1, 0, 1, // color     [r, g, b, a]
+      tw,  -0.5, 0, 1, // position  [x, y, z, w]
+      0,      0, 1, 1, // color     [r, g, b, a]
     ]);
 
     const vertexBuffer = GPU.createBuffer({
