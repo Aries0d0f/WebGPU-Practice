@@ -1,4 +1,5 @@
-#root {
+#root,
+canvas {
   position: relative;
   text-align: center;
   width: 100%;
