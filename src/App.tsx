@@ -100,7 +100,7 @@ function App() {
 
     passEncoder.setPipeline(renderPipeline);
     passEncoder.setVertexBuffer(0, vertexBuffer);
-    passEncoder.draw(3);
+    passEncoder.draw(vertices.length / 4 / 2);
     passEncoder.end();
 
     GPU.queue.submit([commandEncoder.finish()]);
