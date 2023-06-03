@@ -8,6 +8,7 @@ function App() {
   const canvasRef$ = createRef<HTMLCanvasElement>();
   const [GPU, setGPU] = useState<GPUDevice>();
   const [ctx, setCtx] = useState<GPUCanvasContext>();
+  const [size, setSize] = useState<number>(0);
 
   const GPUComputeCtx = (GPU: GPUDevice, ctx: GPUCanvasContext) => {
     ctx.configure({
@@ -112,9 +113,12 @@ function App() {
 
   useEffect(() => {
     if (canvasRef$.current && canvasRef$.current.getContext('webgpu')) {
-      canvasRef$.current.width = canvasRef$.current.clientWidth;
-      canvasRef$.current.height = canvasRef$.current.clientHeight;
-
+      setSize(
+        Math.min(
+          canvasRef$.current.parentElement?.clientWidth ?? 0,
+          canvasRef$.current.parentElement?.clientHeight ?? 0
+        ) - 10
+      );
       setCtx(canvasRef$.current.getContext('webgpu')!);
     }
   }, [canvasRef$]);
@@ -127,7 +131,7 @@ function App() {
 
   return (
     <>
-      <canvas ref={canvasRef$} />
+      <canvas ref={canvasRef$} width={size} height={size} />
     </>
   );
 }

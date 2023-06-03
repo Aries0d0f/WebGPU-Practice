@@ -1,7 +1,8 @@
-#root,
-canvas {
+#root {
   position: relative;
-  text-align: center;
+  display: flex;
+  place-items: center;
+  place-content: center;
   width: 100%;
   height: 100vh;
 }
